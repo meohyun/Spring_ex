@@ -3,6 +3,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="tv" class="polymorphism.SamsungTV" init-method="intiMethod" destory-method="destoryMethod"></bean>
+	<bean id="tv" class="polymorphism.SamsungTV" init-method="intiMethod" destory-method="destoryMethod" lazy-init="true" scope="singleton"></bean>
+	
+	// init-method => 컨테이너 시작시 객체 초기화할때 메소드 실행, destory-method => 컨테이너 종료시 객체 삭제할때 메소드 실행, lazy-init => 해당 bean이 사용되는 시점에
+      객체를 생성하여 메모리 관리를 효율적으로 가능케함.
+	scope => singleton은 객체 생성 요청시 하나의 객체만 생성되는 것 , prototype은 객체 생성 요청한 만큼 객체가 생성됨.
+	
 
 </beans>
